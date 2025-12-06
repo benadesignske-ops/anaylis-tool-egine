@@ -38,15 +38,11 @@ export function DerivAPIProvider({ children }: { children: React.ReactNode }) {
   const { token, isLoggedIn } = useDerivAuth()
 
   useEffect(() => {
-    console.log("[v0] DerivAPIContext: Connecting without authentication...")
-
     if (isConnectingRef.current) {
-      console.log("[v0] DerivAPIContext: Already connecting, skipping...")
       return
     }
 
     if (globalAPIClient && globalAPIClient.isConnected()) {
-      console.log("[v0] DerivAPIContext: Reusing existing connected client")
       setApiClient(globalAPIClient)
       setIsConnected(true)
       setIsAuthorized(true)
@@ -60,7 +56,6 @@ export function DerivAPIProvider({ children }: { children: React.ReactNode }) {
 
       try {
         initAttemptRef.current++
-        console.log(`[v0] DerivAPIContext: Connection attempt ${initAttemptRef.current}`)
         setConnectionStatus("connecting")
         setError(null)
 
@@ -76,14 +71,11 @@ export function DerivAPIProvider({ children }: { children: React.ReactNode }) {
         globalAPIClient = new DerivAPIClient({ appId: DERIV_CONFIG.APP_ID })
 
         globalAPIClient.setErrorCallback((err) => {
-          console.error("[v0] DerivAPIContext API Error:", err)
+          console.error("[v0] API Error:", err)
           setError(err.message || "API Error")
         })
 
         await globalAPIClient.connect()
-        console.log("[v0] DerivAPIContext: WebSocket connected (no auth)")
-
-        console.log("[v0] DerivAPIContext: Bypassing authorization")
 
         setApiClient(globalAPIClient)
         setIsConnected(true)
@@ -93,16 +85,15 @@ export function DerivAPIProvider({ children }: { children: React.ReactNode }) {
         initAttemptRef.current = 0
         isConnectingRef.current = false
       } catch (err: any) {
-        console.error("[v0] DerivAPIContext: Connection failed:", err)
+        console.error("[v0] Connection failed:", err)
         isConnectingRef.current = false
 
         if (initAttemptRef.current < 5) {
           setConnectionStatus("reconnecting")
           const delay = Math.min(1000 * Math.pow(1.5, initAttemptRef.current), 10000)
-          console.log(`[v0] DerivAPIContext: Reconnecting in ${delay}ms...`)
           setTimeout(attemptConnection, delay)
         } else {
-          console.error("[v0] DerivAPIContext: Max connection attempts reached")
+          console.error("[v0] Max connection attempts reached")
           setError("Failed to connect to API. Please check your connection and try again.")
           setConnectionStatus("disconnected")
           setIsConnected(false)
@@ -130,12 +121,12 @@ export function DerivAPIProvider({ children }: { children: React.ReactNode }) {
           setConnectionStatus("disconnected")
         }
       }
-    }, 500)
+    }, 2000)
 
     return () => {
       clearInterval(interval)
     }
-  }, []) // Removed token and isLoggedIn dependencies
+  }, [])
 
   return (
     <DerivAPIContext.Provider

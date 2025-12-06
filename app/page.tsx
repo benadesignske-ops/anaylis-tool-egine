@@ -20,12 +20,10 @@ import { LastDigitsChart } from "@/components/charts/last-digits-chart"
 import { LastDigitsLineChart } from "@/components/charts/last-digits-line-chart"
 import { AIAnalysisTab } from "@/components/tabs/ai-analysis-tab"
 import { SuperSignalsTab } from "@/components/tabs/super-signals-tab"
-import { LoadingScreen } from "@/components/loading-screen"
 import { AutoBotTab } from "@/components/tabs/autobot-tab"
 import { AutomatedTab } from "@/components/tabs/automated-tab"
 import { SmartAuto24Tab } from "@/components/tabs/smartauto24-tab"
 import { useGlobalTradingContext } from "@/hooks/use-global-trading-context"
-import { verifier } from "@/lib/system-verifier"
 import { LiveTicker } from "@/components/live-ticker"
 import { TradeNowTab } from "@/components/tabs/trade-now-tab"
 import { ToolsInfoTab } from "@/components/tabs/tools-info-tab"
@@ -35,7 +33,7 @@ import { SettingsDialog } from "@/components/settings-dialog"
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("dark")
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [initError, setInitError] = useState<string | null>(null)
   const [isSliderOpen, setIsSliderOpen] = useState(false)
   const globalContext = useGlobalTradingContext()
@@ -58,40 +56,7 @@ export default function Home() {
   useEffect(() => {
     try {
       document.documentElement.classList.add("dark")
-      console.log("[v0] App initialization started")
-      console.log("[v0] ✅ UI Responsiveness Updated")
-      console.log("[v0] ✅ Global API Token Integration Complete")
-      console.log("[v0] ✅ Balance Update Fixed")
-      console.log("[v0] ✅ Digits Distribution Updated")
-      console.log("[v0] ✅ Super Signals Updated")
-      console.log("[v0] ✅ Even/Odd Tab Updated - WAIT text now shows in blue badge")
-      console.log("[v0] ✅ Over/Under Tab Updated - Duplicate '(Selected: 4)' text removed")
-      console.log("[v0] ✅ AI Analysis Updated")
-      console.log("[v0] ✅ Autobot Updated")
-      console.log("[v0] ✅ Autonomous Bot Updated")
-      console.log("[v0] ✅ Trade Now Tab Updated")
-      console.log(
-        "[v0] ✅ SmartAuto24 Tab Updated - Martingale multipliers: Even/Odd=2.1, Over3/Under6=2.6, Over2/Under7=3.5",
-      )
-      console.log("[v0] ✅ Flux Traders Branding Applied")
-      console.log("[v0] ✅ FOX Loader Created with Liquid Fill")
-      console.log("[v0] ✅ Soft UI with Glowing Edges Implemented")
-      console.log("[v0] ✅ Trading Slider Now Visible on Right Side")
-      console.log("[v0] ✅ Digit Distribution Horizontal (0-4, 5-9) Updated")
-      console.log("[v0] ✅ Signals Tab Beautified with Glowing Effects")
-      console.log("[v0] ✅ Over/Under Tab Simplified")
-      console.log("[v0] ✅ AutoBot Single Market Trade Implemented")
-      console.log("[v0] ✅ Autonomous Bot API Socket Connection")
-      console.log("[v0] ✅ Trade Now Tab Contract Dropdowns")
-      console.log("[v0] ✅ SmartAuto24 User Martingale Configuration")
-      console.log("[v0] ✅ Mobile Responsive & Fast Loading")
-      // Removed Hamburger Menu related logs
-      console.log("[v0] ✅ Hamburger Menu Removed - Settings in Header")
-      console.log("[v0] ✅ Auto-streaming data on load")
-      console.log("[v0] ✅ SuperSignals Fixed with Market Data API")
-      console.log("[v0] ✅ AutoBot & Automated tabs using dashboard symbol")
-      verifier.markComplete("Core System")
-      console.log("[v0] App initialization completed successfully")
+      console.log("[v0] App initialized")
     } catch (error) {
       console.error("[v0] Initialization error:", error)
       setInitError(error instanceof Error ? error.message : "Unknown error")
@@ -107,19 +72,6 @@ export default function Home() {
 
   const activeSignals = (analysisData.signals || []).filter((s) => s.status !== "NEUTRAL")
   const powerfulSignalsCount = activeSignals.filter((s) => s.status === "TRADE NOW").length
-
-  useEffect(() => {
-    if (marketData.length > 0) {
-      console.log("[v0] Market data available:", {
-        marketDataLength: marketData.length,
-        currentPrice,
-        lastDigit: marketData[marketData.length - 1],
-        symbolsCount: symbols.length,
-        selectedSymbol,
-        connectionStatus,
-      })
-    }
-  }, [marketData, currentPrice, symbols, selectedSymbol, connectionStatus])
 
   if (initError) {
     return (
@@ -137,19 +89,6 @@ export default function Home() {
       </div>
     )
   }
-
-  if (isLoading) {
-    return (
-      <LoadingScreen
-        onComplete={() => {
-          console.log("[v0] Loading screen completed, showing main app")
-          setIsLoading(false)
-        }}
-      />
-    )
-  }
-
-  console.log("[v0] Main app rendering, connectionStatus:", connectionStatus)
 
   return (
     <div

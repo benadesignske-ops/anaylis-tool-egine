@@ -40,7 +40,6 @@ export function useDeriv(initialSymbol = "R_100", initialMaxTicks = 100) {
     predictorRef.current = new AIPredictor()
 
     const unsubscribeStatus = wsRef.current.onConnectionStatus((status) => {
-      console.log("[v0] Connection status changed:", status)
       setConnectionStatus(status)
     })
 
@@ -99,7 +98,6 @@ export function useDeriv(initialSymbol = "R_100", initialMaxTicks = 100) {
     wsRef.current
       .connect()
       .then(() => {
-        console.log("[v0] WebSocket connected, fetching symbols and subscribing to ticks")
         wsRef.current?.getActiveSymbols()
         wsRef.current?.subscribeTicks(symbol)
       })
@@ -118,7 +116,6 @@ export function useDeriv(initialSymbol = "R_100", initialMaxTicks = 100) {
   }, [activeAccount?.token, maxTicks, symbol])
 
   const changeSymbol = useCallback((newSymbol: string) => {
-    console.log("[v0] Changing symbol to:", newSymbol)
     if (wsRef.current?.isConnected()) {
       wsRef.current.unsubscribeTicks()
       wsRef.current.subscribeTicks(newSymbol)
@@ -132,7 +129,6 @@ export function useDeriv(initialSymbol = "R_100", initialMaxTicks = 100) {
       setAiPrediction(null)
       setMarketData([])
     } else {
-      console.log("[v0] Not connected, attempting to reconnect for symbol change")
       setSymbol(newSymbol)
       wsRef.current
         ?.connect()

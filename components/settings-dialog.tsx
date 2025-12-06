@@ -17,12 +17,6 @@ interface SettingsDialogProps {
 }
 
 export function SettingsDialog({ symbols, currentSymbol, onSymbolChange, theme, setTheme }: SettingsDialogProps) {
-  console.log("[v0] SettingsDialog rendering:", {
-    symbolsCount: symbols.length,
-    currentSymbol,
-    sampleSymbols: symbols.slice(0, 3).map((s) => s.symbol),
-  })
-
   return (
     <Sheet>
       <SheetTrigger asChild>
