@@ -166,7 +166,7 @@ export function MatchesTab({ analysis, signals, recentDigits, theme = "dark" }: 
               onClick={handleScan}
               disabled={isScanning}
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-6 text-lg"
+              className="bg-gradient-to-r from-primary to-brand-teal hover:from-primary/90 hover:to-brand-teal/90 text-white px-8 py-6 text-lg"
             >
               {isScanning ? `Scanning... ${countdown}s` : "Scan Last 12 Ticks"}
             </Button>

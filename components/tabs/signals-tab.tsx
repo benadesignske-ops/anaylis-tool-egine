@@ -283,7 +283,7 @@ export function SignalsTab({ signals, proSignals, analysis, theme = "dark" }: Si
             </div>
             <div className="text-center">
               <div
-                className={`text-3xl sm:text-4xl font-bold ${theme === "dark" ? "text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" : "text-purple-600"}`}
+                className={`text-3xl sm:text-4xl font-bold ${theme === "dark" ? "text-primary drop-shadow-[0_0_10px_rgba(255,68,79,0.8)]" : "text-primary"}`}
               >
                 {stdDev}
               </div>

@@ -283,7 +283,7 @@ export function MoneyMakerTab({ theme = "dark", recentDigits = [] }: MoneyMakerT
       <div
         className={`rounded-xl p-4 sm:p-6 border ${
           theme === "dark"
-            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-purple-500/20"
+            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-accent/20"
             : "bg-white border-gray-200"
         }`}
       >
@@ -459,17 +459,17 @@ export function MoneyMakerTab({ theme = "dark", recentDigits = [] }: MoneyMakerT
       <div
         className={`rounded-xl p-4 sm:p-6 border grid grid-cols-3 gap-4 ${
           theme === "dark"
-            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-purple-500/20"
+            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-accent/20"
             : "bg-white border-gray-200"
         }`}
       >
         <Card
-          className={`p-3 text-center ${theme === "dark" ? "bg-purple-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
+          className={`p-3 text-center ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
         >
-          <p className={`text-xs font-semibold mb-1 ${theme === "dark" ? "text-purple-300" : "text-purple-700"}`}>
+          <p className={`text-xs font-semibold mb-1 ${theme === "dark" ? "text-brand-teal-light" : "text-success"}`}>
             Market Power
           </p>
-          <p className="text-2xl font-bold text-purple-400">{analysis.marketPower.toFixed(1)}%</p>
+          <p className="text-2xl font-bold text-primary">{analysis.marketPower.toFixed(1)}%</p>
         </Card>
         <Card
           className={`p-3 text-center ${theme === "dark" ? "bg-yellow-500/10 border-yellow-500/30" : "bg-yellow-50 border-yellow-200"}`}

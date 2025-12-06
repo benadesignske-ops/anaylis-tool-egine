@@ -250,13 +250,11 @@ export function OverUnderTab({
         <div
           className={`mb-6 p-5 rounded-xl border ${
             theme === "dark"
-              ? "bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-purple-500/30"
-              : "bg-gradient-to-br from-purple-50 to-blue-50 border-purple-200"
+              ? "bg-gradient-to-br from-primary/30 to-accent/30 border-accent/30"
+              : "bg-gradient-to-br from-muted to-muted border-border"
           }`}
         >
-          <h4
-            className={`text-lg font-bold mb-4 text-center ${theme === "dark" ? "text-purple-300" : "text-purple-800"}`}
-          >
+          <h4 className={`text-lg font-bold mb-4 text-center ${theme === "dark" ? "text-primary" : "text-primary"}`}>
             Digit {selectedDigit} Prediction Power
           </h4>
 
@@ -319,7 +317,7 @@ export function OverUnderTab({
               />
             </div>
             <div className="text-center">
-              <span className={`text-xl font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}>
+              <span className={`text-xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                 {digitPower.confidence}% Confidence
               </span>
             </div>

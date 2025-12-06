@@ -204,8 +204,8 @@ export function AutomatedTradesTab({ theme = "dark" }: AutomatedTradesTabProps) 
         <Card
           className={
             theme === "dark"
-              ? "bg-gradient-to-br from-purple-500/10 to-purple-500/5 border-purple-500/30"
-              : "bg-purple-50 border-purple-200"
+              ? "bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30"
+              : "bg-muted border-border"
           }
         >
           <CardHeader className="pb-2">
@@ -264,9 +264,9 @@ export function AutomatedTradesTab({ theme = "dark" }: AutomatedTradesTabProps) 
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-              <div className="text-center p-3 rounded-lg bg-purple-500/10 border border-purple-500/30">
+              <div className="text-center p-3 rounded-lg bg-accent/10 border border-accent/30">
                 <p className="text-xs text-gray-400">Market Price</p>
-                <p className="text-2xl font-bold text-purple-400">
+                <p className="text-2xl font-bold text-primary">
                   {marketPrice > 0 ? marketPrice.toFixed(5) : "0.00000"}
                 </p>
               </div>

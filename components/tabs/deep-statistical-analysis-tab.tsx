@@ -289,14 +289,14 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
       <Card
         className={`p-6 border ${
           theme === "dark"
-            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.2)]"
+            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-accent/20 shadow-[0_0_30px_rgba(0,114,255,0.2)]"
             : "bg-white border-gray-200 shadow-lg"
         }`}
       >
         <h2
           className={`text-2xl md:text-3xl font-bold mb-4 text-center ${
             theme === "dark"
-              ? "bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+              ? "bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent"
               : "text-gray-900"
           }`}
         >
@@ -311,7 +311,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
       <Card
         className={`p-6 border ${
           theme === "dark"
-            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-blue-500/20"
+            ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-accent/20"
             : "bg-white border-gray-200"
         }`}
       >
@@ -322,11 +322,11 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
             </label>
             <Select value={selectedMarket} onValueChange={setSelectedMarket}>
               <SelectTrigger
-                className={`${theme === "dark" ? "bg-[#0f1629]/50 border-blue-500/30 text-white" : "bg-white border-gray-300"}`}
+                className={`${theme === "dark" ? "bg-[#0f1629]/50 border-accent/30 text-white" : "bg-white border-gray-300"}`}
               >
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className={theme === "dark" ? "bg-[#0a0e27] border-blue-500/30" : "bg-white"}>
+              <SelectContent className={theme === "dark" ? "bg-[#0a0e27] border-accent/30" : "bg-white"}>
                 {ANALYSIS_MARKETS.map((market) => (
                   <SelectItem key={market.symbol} value={market.symbol}>
                     {market.name}
@@ -342,11 +342,11 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
             </label>
             <Select value={tickCount.toString()} onValueChange={(v) => setTickCount(Number.parseInt(v))}>
               <SelectTrigger
-                className={`${theme === "dark" ? "bg-[#0f1629]/50 border-blue-500/30 text-white" : "bg-white border-gray-300"}`}
+                className={`${theme === "dark" ? "bg-[#0f1629]/50 border-accent/30 text-white" : "bg-white border-gray-300"}`}
               >
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className={theme === "dark" ? "bg-[#0a0e27] border-blue-500/30" : "bg-white"}>
+              <SelectContent className={theme === "dark" ? "bg-[#0a0e27] border-accent/30" : "bg-white"}>
                 <SelectItem value="500">500 Ticks</SelectItem>
                 <SelectItem value="1000">1000 Ticks</SelectItem>
                 <SelectItem value="2000">2000 Ticks</SelectItem>
@@ -360,7 +360,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
             <Button
               onClick={analyzeMarket}
               disabled={isAnalyzing || !token}
-              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-6"
+              className="w-full bg-gradient-to-r from-primary to-brand-teal hover:from-primary/90 hover:to-brand-teal/90 text-white font-bold py-6"
             >
               {isAnalyzing ? "Analyzing..." : "Start Deep Analysis"}
             </Button>
@@ -396,42 +396,34 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
           <TabsContent value="overview" className="space-y-4 mt-4">
             {/* Key Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Card
-                className={`p-4 ${theme === "dark" ? "bg-blue-500/10 border-blue-500/30" : "bg-blue-50 border-blue-200"}`}
-              >
+              <Card className={`p-4 ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}>
                 <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                   Analyzed Ticks
                 </div>
-                <div className={`text-2xl font-bold ${theme === "dark" ? "text-blue-400" : "text-blue-600"}`}>
+                <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                   {analysisResult.tickCount}
                 </div>
               </Card>
 
-              <Card
-                className={`p-4 ${theme === "dark" ? "bg-purple-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
-              >
+              <Card className={`p-4 ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}>
                 <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Volatility</div>
-                <div className={`text-2xl font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}>
+                <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                   {analysisResult.volatilityIndex.toFixed(1)}%
                 </div>
               </Card>
 
-              <Card
-                className={`p-4 ${theme === "dark" ? "bg-green-500/10 border-green-500/30" : "bg-green-50 border-green-200"}`}
-              >
+              <Card className={`p-4 ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}>
                 <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Entropy</div>
-                <div className={`text-2xl font-bold ${theme === "dark" ? "text-green-400" : "text-green-600"}`}>
+                <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                   {analysisResult.entropyScore.toFixed(1)}%
                 </div>
               </Card>
 
-              <Card
-                className={`p-4 ${theme === "dark" ? "bg-orange-500/10 border-orange-500/30" : "bg-orange-50 border-orange-200"}`}
-              >
+              <Card className={`p-4 ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}>
                 <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                   AI Accuracy
                 </div>
-                <div className={`text-2xl font-bold ${theme === "dark" ? "text-orange-400" : "text-orange-600"}`}>
+                <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                   {analysisResult.predictiveAccuracy.toFixed(1)}%
                 </div>
               </Card>
@@ -440,7 +432,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
             {/* Even/Odd & Over/Under Balance */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card
-                className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-500/30" : "bg-cyan-50 border-cyan-200"}`}
+                className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-primary/10 to-brand-teal/10 border-accent/30" : "bg-muted border-border"}`}
               >
                 <h3 className={`text-lg font-bold mb-4 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
                   Even/Odd Balance
@@ -449,7 +441,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Even</span>
-                      <span className={theme === "dark" ? "text-cyan-400" : "text-cyan-600"}>
+                      <span className={theme === "dark" ? "text-primary" : "text-primary"}>
                         {analysisResult.evenOddBalance.even.toFixed(1)}%
                       </span>
                     </div>
@@ -458,7 +450,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Odd</span>
-                      <span className={theme === "dark" ? "text-blue-400" : "text-blue-600"}>
+                      <span className={theme === "dark" ? "text-primary" : "text-primary"}>
                         {analysisResult.evenOddBalance.odd.toFixed(1)}%
                       </span>
                     </div>
@@ -475,7 +467,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
               </Card>
 
               <Card
-                className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
+                className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-primary/10 to-brand-teal/10 border-accent/30" : "bg-muted border-border"}`}
               >
                 <h3 className={`text-lg font-bold mb-4 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
                   Over/Under Balance
@@ -484,7 +476,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Over 5</span>
-                      <span className={theme === "dark" ? "text-purple-400" : "text-purple-600"}>
+                      <span className={theme === "dark" ? "text-primary" : "text-primary"}>
                         {analysisResult.overUnderBalance.over5.toFixed(1)}%
                       </span>
                     </div>
@@ -493,7 +485,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Under 4</span>
-                      <span className={theme === "dark" ? "text-pink-400" : "text-pink-600"}>
+                      <span className={theme === "dark" ? "text-primary" : "text-primary"}>
                         {analysisResult.overUnderBalance.under4.toFixed(1)}%
                       </span>
                     </div>
@@ -513,7 +505,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
 
           <TabsContent value="patterns" className="space-y-4 mt-4">
             <Card
-              className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-blue-500/20" : "bg-white border-gray-200"}`}
+              className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-primary/10 to-brand-teal/10 border-accent/30" : "bg-muted border-border"}`}
             >
               <h3 className={`text-xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
                 AI Pattern Recognition
@@ -522,7 +514,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
                 {analysisResult.patterns.map((pattern, idx) => (
                   <Card
                     key={idx}
-                    className={`p-4 ${theme === "dark" ? "bg-purple-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
+                    className={`p-4 ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
                   >
                     <div className="flex justify-between items-start mb-2">
                       <div>
@@ -549,7 +541,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
                       <span className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                         Predicted Next:{" "}
                       </span>
-                      <span className={`font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}>
+                      <span className={`font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                         {pattern.predictedNext.join(", ")}
                       </span>
                     </div>
@@ -561,7 +553,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
 
           <TabsContent value="favorability" className="space-y-4 mt-4">
             <Card
-              className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-green-500/20" : "bg-white border-gray-200"}`}
+              className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-primary/10 to-brand-teal/10 border-accent/30" : "bg-muted border-border"}`}
             >
               <h3 className={`text-xl font-bold mb-4 text-center ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
                 Market Favorability Analysis
@@ -585,52 +577,50 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <Card
-                  className={`p-4 text-center ${theme === "dark" ? "bg-cyan-500/10 border-cyan-500/30" : "bg-cyan-50 border-cyan-200"}`}
+                  className={`p-4 text-center ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
                 >
                   <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                     Over/Under
                   </div>
-                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-cyan-400" : "text-cyan-600"}`}>
+                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                     {analysisResult.marketFavorability.overUnderScore.toFixed(0)}
                   </div>
                 </Card>
 
                 <Card
-                  className={`p-4 text-center ${theme === "dark" ? "bg-blue-500/10 border-blue-500/30" : "bg-blue-50 border-blue-200"}`}
+                  className={`p-4 text-center ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
                 >
                   <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Even/Odd</div>
-                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-blue-400" : "text-blue-600"}`}>
+                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                     {analysisResult.marketFavorability.evenOddScore.toFixed(0)}
                   </div>
                 </Card>
 
                 <Card
-                  className={`p-4 text-center ${theme === "dark" ? "bg-purple-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
+                  className={`p-4 text-center ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
                 >
                   <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Matches</div>
-                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}>
+                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                     {analysisResult.marketFavorability.matchesScore.toFixed(0)}
                   </div>
                 </Card>
 
                 <Card
-                  className={`p-4 text-center ${theme === "dark" ? "bg-pink-500/10 border-pink-500/30" : "bg-pink-50 border-pink-200"}`}
+                  className={`p-4 text-center ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
                 >
                   <div className={`text-xs mb-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Differs</div>
-                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-pink-400" : "text-pink-600"}`}>
+                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                     {analysisResult.marketFavorability.differsScore.toFixed(0)}
                   </div>
                 </Card>
               </div>
 
-              <Card
-                className={`p-6 ${theme === "dark" ? "bg-green-500/10 border-green-500/30" : "bg-green-50 border-green-200"}`}
-              >
+              <Card className={`p-6 ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}>
                 <div className="text-center">
                   <div className={`text-sm mb-2 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                     Overall Market Score
                   </div>
-                  <div className={`text-5xl font-bold ${theme === "dark" ? "text-green-400" : "text-green-600"}`}>
+                  <div className={`text-5xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                     {analysisResult.marketFavorability.overallScore.toFixed(1)}
                   </div>
                   <Progress value={analysisResult.marketFavorability.overallScore} className="h-3 mt-4" />
@@ -641,7 +631,7 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
 
           <TabsContent value="distribution" className="space-y-4 mt-4">
             <Card
-              className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-[#0f1629]/80 to-[#1a2235]/80 border-blue-500/20" : "bg-white border-gray-200"}`}
+              className={`p-6 ${theme === "dark" ? "bg-gradient-to-br from-primary/10 to-brand-teal/10 border-accent/30" : "bg-muted border-border"}`}
             >
               <h3 className={`text-xl font-bold mb-4 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
                 Digit Distribution
@@ -666,9 +656,9 @@ export function DeepStatisticalAnalysisTab({ theme = "dark" }: DeepStatisticalAn
               {analysisResult.digitDistribution.map((d) => (
                 <Card
                   key={d.digit}
-                  className={`p-3 text-center ${theme === "dark" ? "bg-blue-500/10 border-blue-500/30" : "bg-blue-50 border-blue-200"}`}
+                  className={`p-3 text-center ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
                 >
-                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-blue-400" : "text-blue-600"}`}>
+                  <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                     {d.digit}
                   </div>
                   <div className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>

@@ -348,15 +348,13 @@ export function EvenOddTab({
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <div
             className={`p-4 rounded-lg text-center ${
-              theme === "dark"
-                ? "bg-purple-500/10 border border-purple-500/30"
-                : "bg-purple-50 border border-purple-200"
+              theme === "dark" ? "bg-accent/10 border border-accent/30" : "bg-muted border border-border"
             }`}
           >
             <div className={`text-sm mb-1 font-semibold ${theme === "dark" ? "text-gray-400" : "text-gray-700"}`}>
               Market Volatility
             </div>
-            <div className={`text-2xl font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}>
+            <div className={`text-2xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
               {volatility.toFixed(1)}%
             </div>
             <div className={`text-xs mt-1 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>

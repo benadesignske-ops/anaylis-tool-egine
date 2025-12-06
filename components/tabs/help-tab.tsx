@@ -278,8 +278,8 @@ export function HelpTab({ theme = "dark" }: HelpTabProps) {
         <Card
           className={
             theme === "dark"
-              ? "bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/30"
-              : "bg-purple-50 border-purple-200"
+              ? "bg-gradient-to-br from-primary/10 to-brand-teal/10 border-accent/30"
+              : "bg-muted border-border"
           }
         >
           <CardHeader>
@@ -326,11 +326,7 @@ export function HelpTab({ theme = "dark" }: HelpTabProps) {
               )}
             </div>
 
-            <Button
-              onClick={handleUpload}
-              disabled={!selectedFile}
-              className="w-full bg-purple-500 hover:bg-purple-600"
-            >
+            <Button onClick={handleUpload} disabled={!selectedFile} className="w-full bg-primary hover:bg-primary/90">
               <Upload className="w-4 h-4 mr-2" />
               Upload {uploadType === "bot" ? "Bot" : "Strategy"}
             </Button>

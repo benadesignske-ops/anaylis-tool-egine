@@ -287,10 +287,10 @@ export function AIAnalysisTab({ analysis, currentDigit, currentPrice, symbol, th
             </div>
           </div>
           <div
-            className={`rounded-lg p-4 border ${theme === "dark" ? "bg-purple-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
+            className={`rounded-lg p-4 border ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
           >
             <div className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Status</div>
-            <div className={`text-lg font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}>
+            <div className={`text-lg font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
               {autoAnalysisMode ? "Active" : "Ready"}
             </div>
           </div>
@@ -410,14 +410,12 @@ export function AIAnalysisTab({ analysis, currentDigit, currentPrice, symbol, th
               </div>
 
               <div
-                className={`rounded-lg p-4 border ${theme === "dark" ? "bg-purple-500/10 border-purple-500/30" : "bg-purple-50 border-purple-200"}`}
+                className={`rounded-lg p-4 border ${theme === "dark" ? "bg-accent/10 border-accent/30" : "bg-muted border-border"}`}
               >
                 <div className={`text-xs sm:text-sm mb-2 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
                   Confidence
                 </div>
-                <div
-                  className={`text-2xl sm:text-3xl font-bold ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`}
-                >
+                <div className={`text-2xl sm:text-3xl font-bold ${theme === "dark" ? "text-primary" : "text-primary"}`}>
                   {aiSignalResult.confidence.toFixed(1)}%
                 </div>
               </div>

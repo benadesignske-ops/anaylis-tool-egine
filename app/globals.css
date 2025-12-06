@@ -4,74 +4,91 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.95 0.01 60);
-  --card: oklch(0.12 0.01 200);
-  --card-foreground: oklch(0.95 0.01 60);
-  --popover: oklch(0.12 0.01 200);
-  --popover-foreground: oklch(0.95 0.01 60);
-  --primary: oklch(0.6 0.25 250);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.5 0.2 200);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.25 0.05 200);
-  --muted-foreground: oklch(0.65 0.05 200);
-  --accent: oklch(0.65 0.2 280);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.6 0.25 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.2 0.05 200);
-  --input: oklch(0.15 0.05 200);
-  --ring: oklch(0.6 0.25 250);
-  --chart-1: oklch(0.65 0.22 280);
-  --chart-2: oklch(0.6 0.18 200);
-  --chart-3: oklch(0.55 0.2 170);
-  --chart-4: oklch(0.7 0.2 40);
-  --chart-5: oklch(0.65 0.18 300);
+  /* Deriv Brand Colors */
+  --brand-red-coral: #ff444f;
+  --brand-secondary: #00c6ff;
+  --brand-blue: #0072ff;
+  --brand-teal: #00a79e;
+  --brand-teal-light: #4bb4b3;
+
+  /* Base Colors */
+  --background: #fff;
+  --foreground: #333;
+  --card: #f5f5f5;
+  --card-foreground: #000;
+  --popover: #fff;
+  --popover-foreground: #333;
+  --primary: #ff444f;
+  --primary-foreground: #fff;
+  --secondary: #00c6ff;
+  --secondary-foreground: #fff;
+  --muted: #e8e8e8;
+  --muted-foreground: #666;
+  --accent: #0072ff;
+  --accent-foreground: #fff;
+  --destructive: #ff444f;
+  --destructive-foreground: #fff;
+  --border: #d6dadb;
+  --input: #e8e8e8;
+  --ring: #0072ff;
+
+  /* Status Colors */
+  --success: #4bb4b3;
+  --warning: #ffad3a;
+  --info: #0072ff;
+
+  /* Chart Colors */
+  --chart-1: #0072ff;
+  --chart-2: #00c6ff;
+  --chart-3: #4bb4b3;
+  --chart-4: #ffad3a;
+  --chart-5: #ff444f;
+
   --radius: 0.75rem;
-  --sidebar: oklch(0.1 0.01 200);
-  --sidebar-foreground: oklch(0.95 0.01 60);
-  --sidebar-primary: oklch(0.6 0.25 250);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.65 0.2 280);
-  --sidebar-accent-foreground: oklch(0.99 0 0);
-  --sidebar-border: oklch(0.2 0.05 200);
-  --sidebar-ring: oklch(0.6 0.25 250);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.95 0.01 60);
-  --card: oklch(0.12 0.01 200);
-  --card-foreground: oklch(0.95 0.01 60);
-  --popover: oklch(0.12 0.01 200);
-  --popover-foreground: oklch(0.95 0.01 60);
-  --primary: oklch(0.6 0.25 250);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.5 0.2 200);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.25 0.05 200);
-  --muted-foreground: oklch(0.65 0.05 200);
-  --accent: oklch(0.65 0.2 280);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.6 0.25 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.2 0.05 200);
-  --input: oklch(0.15 0.05 200);
-  --ring: oklch(0.6 0.25 250);
-  --chart-1: oklch(0.65 0.22 280);
-  --chart-2: oklch(0.6 0.18 200);
-  --chart-3: oklch(0.55 0.2 170);
-  --chart-4: oklch(0.7 0.2 40);
-  --chart-5: oklch(0.65 0.18 300);
-  --sidebar: oklch(0.1 0.01 200);
-  --sidebar-foreground: oklch(0.95 0.01 60);
-  --sidebar-primary: oklch(0.6 0.25 250);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.65 0.2 280);
-  --sidebar-accent-foreground: oklch(0.99 0 0);
-  --sidebar-border: oklch(0.2 0.05 200);
-  --sidebar-ring: oklch(0.6 0.25 250);
+  /* Deriv Dark Theme Colors */
+  --background: #0e0e0e;
+  --foreground: #c2c2c2;
+  --card: #0e0e0e;
+  --card-foreground: #fff;
+  --popover: #0e0e0e;
+  --popover-foreground: #c2c2c2;
+  --primary: #ff444f;
+  --primary-foreground: #fff;
+  --secondary: #00c6ff;
+  --secondary-foreground: #fff;
+  --muted: #333;
+  --muted-foreground: #a0a0a0;
+  --accent: #0072ff;
+  --accent-foreground: #fff;
+  --destructive: #b22222;
+  --destructive-foreground: #fff;
+  --border: #333;
+  --input: #333;
+  --ring: #0072ff;
+
+  /* Status Colors Dark */
+  --success: #00a79e;
+  --warning: #ffad3a;
+  --info: #2c9aff;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
@@ -94,6 +111,17 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Added Deriv brand color tokens */
+  --color-brand-red: var(--brand-red-coral);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-teal-light: var(--brand-teal-light);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);

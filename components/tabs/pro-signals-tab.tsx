@@ -39,8 +39,8 @@ export function ProSignalsTab({ proSignals, analysis, theme = "dark" }: ProSigna
         <div
           className={`rounded-xl p-6 border ${
             theme === "dark"
-              ? "bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-amber-900/40 border-amber-500/30 shadow-[0_0_40px_rgba(217,119,6,0.3)]"
-              : "bg-gradient-to-br from-purple-50 via-pink-50 to-amber-50 border-amber-300 shadow-xl"
+              ? "bg-gradient-to-br from-primary/40 via-brand-teal/30 to-amber-900/40 border-amber-500/30 shadow-[0_0_40px_rgba(217,119,6,0.3)]"
+              : "bg-gradient-to-br from-orange-50 via-cyan-50 to-amber-50 border-amber-300 shadow-xl"
           }`}
         >
           <div className="flex items-center justify-between mb-4">
@@ -78,8 +78,8 @@ export function ProSignalsTab({ proSignals, analysis, theme = "dark" }: ProSigna
                   key={index}
                   className={`p-4 rounded-lg border ${
                     theme === "dark"
-                      ? "bg-gradient-to-br from-amber-500/10 to-purple-500/10 border-amber-500/40 hover:border-amber-400/60 hover:shadow-[0_0_20px_rgba(217,119,6,0.4)]"
-                      : "bg-gradient-to-br from-amber-50 to-purple-50 border-amber-300 hover:border-amber-400 hover:shadow-lg"
+                      ? "bg-gradient-to-br from-amber-500/10 to-brand-teal/10 border-amber-500/40 hover:border-amber-400/60 hover:shadow-[0_0_20px_rgba(217,119,6,0.4)]"
+                      : "bg-gradient-to-br from-amber-50 to-cyan-50 border-amber-300 hover:border-amber-400 hover:shadow-lg"
                   } transition-all`}
                 >
                   <h4 className={`font-bold mb-2 ${theme === "dark" ? "text-amber-400" : "text-amber-700"}`}>
@@ -104,8 +104,8 @@ export function ProSignalsTab({ proSignals, analysis, theme = "dark" }: ProSigna
           key={index}
           className={`rounded-xl p-6 border ${
             theme === "dark"
-              ? "bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-amber-900/40 border-amber-500/30 shadow-[0_0_40px_rgba(217,119,6,0.3)]"
-              : "bg-gradient-to-br from-purple-50 via-pink-50 to-amber-50 border-amber-300 shadow-xl"
+              ? "bg-gradient-to-br from-primary/40 via-brand-teal/30 to-amber-900/40 border-amber-500/30 shadow-[0_0_40px_rgba(217,119,6,0.3)]"
+              : "bg-gradient-to-br from-orange-50 via-cyan-50 to-amber-50 border-amber-300 shadow-xl"
           }`}
         >
           <div className="flex items-center justify-between mb-4">
@@ -174,8 +174,8 @@ export function ProSignalsTab({ proSignals, analysis, theme = "dark" }: ProSigna
       <div
         className={`rounded-xl p-6 border ${
           theme === "dark"
-            ? "bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-amber-900/40 border-amber-500/30 shadow-[0_0_40px_rgba(217,119,6,0.3)]"
-            : "bg-gradient-to-br from-purple-50 via-pink-50 to-amber-50 border-amber-300 shadow-xl"
+            ? "bg-gradient-to-br from-primary/40 via-brand-teal/30 to-amber-900/40 border-amber-500/30 shadow-[0_0_40px_rgba(217,119,6,0.3)]"
+            : "bg-gradient-to-br from-orange-50 via-cyan-50 to-amber-50 border-amber-300 shadow-xl"
         }`}
       >
         <div className="flex items-center justify-between mb-4">
@@ -211,8 +211,8 @@ export function ProSignalsTab({ proSignals, analysis, theme = "dark" }: ProSigna
                 key={index}
                 className={`p-4 rounded-lg border ${
                   theme === "dark"
-                    ? "bg-gradient-to-br from-amber-500/10 to-purple-500/10 border-amber-500/40 hover:border-amber-400/60 hover:shadow-[0_0_20px_rgba(217,119,6,0.4)]"
-                    : "bg-gradient-to-br from-amber-50 to-purple-50 border-amber-300 hover:border-amber-400 hover:shadow-lg"
+                    ? "bg-gradient-to-br from-amber-500/10 to-brand-teal/10 border-amber-500/40 hover:border-amber-400/60 hover:shadow-[0_0_20px_rgba(217,119,6,0.4)]"
+                    : "bg-gradient-to-br from-amber-50 to-cyan-50 border-amber-300 hover:border-amber-400 hover:shadow-lg"
                 } transition-all`}
               >
                 <h4 className={`font-bold mb-2 ${theme === "dark" ? "text-amber-400" : "text-amber-700"}`}>

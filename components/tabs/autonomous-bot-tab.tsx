@@ -189,19 +189,15 @@ export function AutonomousBotTab({ theme = "dark" }: AutonomousBotTabProps) {
       {/* Status Alert */}
       <Card
         className={
-          theme === "dark"
-            ? "bg-gradient-to-br from-purple-500/10 to-purple-500/5 border-purple-500/30"
-            : "bg-purple-50 border-purple-200"
+          theme === "dark" ? "bg-gradient-to-br from-accent/10 to-accent/5 border-accent/30" : "bg-muted border-border"
         }
       >
         <CardContent className="pt-6 flex items-center justify-between">
           <div className="flex items-start gap-3">
-            <Zap className={`w-5 h-5 flex-shrink-0 ${theme === "dark" ? "text-purple-400" : "text-purple-600"}`} />
+            <Zap className={`w-5 h-5 flex-shrink-0 ${theme === "dark" ? "text-primary" : "text-primary"}`} />
             <div>
-              <p className={`font-semibold ${theme === "dark" ? "text-purple-400" : "text-purple-700"}`}>
-                Autonomous Bot 🤖
-              </p>
-              <p className={`text-sm mt-1 ${theme === "dark" ? "text-purple-300" : "text-purple-600"}`}>
+              <p className={`font-semibold ${theme === "dark" ? "text-primary" : "text-primary"}`}>Autonomous Bot 🤖</p>
+              <p className={`text-sm mt-1 ${theme === "dark" ? "text-brand-teal-light" : "text-success"}`}>
                 {!isAuthorized
                   ? "API not connected - Please add API token"
                   : "Fully autonomous trading bot with DIFFERS, OVER/UNDER contracts"}
@@ -468,7 +464,7 @@ export function AutonomousBotTab({ theme = "dark" }: AutonomousBotTabProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div
               className={`p-4 rounded-lg border text-center ${
-                theme === "dark" ? "bg-blue-500/10 border-blue-500/20" : "bg-blue-50 border-blue-200"
+                theme === "dark" ? "bg-accent/5 border-accent/20" : "bg-muted border-border"
               }`}
             >
               <p className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Trades</p>
@@ -479,7 +475,7 @@ export function AutonomousBotTab({ theme = "dark" }: AutonomousBotTabProps) {
 
             <div
               className={`p-4 rounded-lg border text-center ${
-                theme === "dark" ? "bg-green-500/10 border-green-500/20" : "bg-green-50 border-green-200"
+                theme === "dark" ? "bg-accent/5 border-accent/20" : "bg-muted border-border"
               }`}
             >
               <div
@@ -495,7 +491,7 @@ export function AutonomousBotTab({ theme = "dark" }: AutonomousBotTabProps) {
 
             <div
               className={`p-4 rounded-lg border text-center ${
-                theme === "dark" ? "bg-red-500/10 border-red-500/20" : "bg-red-50 border-red-200"
+                theme === "dark" ? "bg-accent/5 border-accent/20" : "bg-muted border-border"
               }`}
             >
               <div
@@ -511,7 +507,7 @@ export function AutonomousBotTab({ theme = "dark" }: AutonomousBotTabProps) {
 
             <div
               className={`p-4 rounded-lg border text-center ${
-                theme === "dark" ? "bg-purple-500/10 border-purple-500/20" : "bg-purple-50 border-purple-200"
+                theme === "dark" ? "bg-accent/10 border-accent/20" : "bg-muted border-border"
               }`}
             >
               <div
@@ -560,7 +556,7 @@ export function AutonomousBotTab({ theme = "dark" }: AutonomousBotTabProps) {
               <p className={`font-semibold ${theme === "dark" ? "text-blue-400" : "text-blue-700"}`}>
                 Autonomous Trading Contracts
               </p>
-              <p className={`text-sm mt-1 ${theme === "dark" ? "text-blue-300" : "text-blue-600"}`}>
+              <p className={`text-sm mt-1 ${theme === "dark" ? "text-blue-300" : "text-success"}`}>
                 This bot trades DIFFERS contract and multiple OVER/UNDER combinations. It will auto-restart after each
                 trade until it reaches your profit target, max loss limit, or you stop it manually. Ensure your API
                 token is connected.
